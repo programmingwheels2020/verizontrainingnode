@@ -10,10 +10,10 @@ const writeStreamCompressed = fs.createWriteStream("./output.gz");
 
 const readStreamCompressed = fs.createReadStream("./output.gz");
 
-readStream.pipe(writeStream);
+//readStream.pipe(writeStream);
 
 
-//readStream.pipe(createGzip()).pipe(writeStreamCompressed)
+readStream.pipe(createGzip()).pipe(writeStreamCompressed)
 
 //readStreamCompressed.pipe(createGunzip()).pipe(writeStream)
 
