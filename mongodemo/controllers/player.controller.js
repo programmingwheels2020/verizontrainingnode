@@ -1,4 +1,5 @@
 const Player = require("../models/player.model")
+const logger = require("../config/logger");
 
 const getPlayerById = async (req, res) => {
 
@@ -6,6 +7,7 @@ const getPlayerById = async (req, res) => {
         let players = await Player.findById(req.params.id)
         res.json({ data: players })
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ errMsg: err.message })
     }
 }
@@ -15,6 +17,7 @@ const getPlayers = async (req, res) => {
         let players = await Player.find({})
         res.json({ data: players })
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ errMsg: err.message })
     }
 
@@ -26,6 +29,7 @@ const createPlayer = async (req, res) => {
         await player.save();
         res.json({ message: "Player Created Successfully" })
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ errMsg: err.message })
     }
 
@@ -37,6 +41,7 @@ const updatePlayer = async (req, res) => {
         await Player.findByIdAndUpdate(req.params.id, req.body);
         res.json({ message: "Player updated Successfully" })
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ errMsg: err.message })
     }
 
@@ -48,6 +53,7 @@ const deletePlayer = async (req, res) => {
         await Player.findByIdAndRemove(req.params.id);
         res.json({ message: "Player deleted Successfully" })
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ errMsg: err.message })
     }
 

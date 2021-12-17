@@ -1,0 +1,6 @@
+{"level":"info","message":"GET:/players/player","service":"mongodb-demo-app"}
+{"level":"info","message":"POST:/auth/login","service":"mongodb-demo-app"}
+{"level":"error","message":"incorrect password","service":"mongodb-demo-app"}
+{"level":"info","message":"POST:/auth/login","service":"mongodb-demo-app"}
+{"level":"error","message":"incorrect password","service":"mongodb-demo-app"}
+{"level":"info","message":"GET:/players/player","service":"mongodb-demo-app"}
